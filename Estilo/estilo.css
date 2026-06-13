@@ -1,0 +1,123 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f6e6d9;
+    margin: 0;
+    padding: 20px;
+    color: #f6e6d9;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-section, .invoice-section {
+    background: #f6e6d9;
+    padding: 25px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+h2, h3, h4 {
+    margin-top: 0;
+    color: #935931;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #f6e6d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.productos-grid {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ddac85;
+    color: 935931;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #f6e6d9;
+}
+
+/* Estilos de la Factura */
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.empresa-logo img {
+    max-width: 80px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.invoice-table th, .invoice-table td {
+    border: 1px solid #f6e6d9;
+    padding: 10px;
+    text-align: left;
+}
+
+.invoice-table th {
+    background-color: #f6e6d9;
+}
+
+.invoice-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.invoice-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-email { background-color: #ddac85; }
+.btn-email:hover { background-color: #ddac85; }
+.btn-print { background-color: #ddac85; }
+.btn-print:hover { background-color: #ddac85; }
+
+/* REGLA DE IMPRESIÓN: Oculta el formulario y botones al imprimir o guardar en PDF */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    body {
+        background: #f6e6d9;
+        padding: 0;
+    }
+    .invoice-section {
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
+    }
+}
