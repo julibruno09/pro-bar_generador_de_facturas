@@ -1,0 +1,169 @@
+/* Configuración de colores personalizados */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f6e6d9; /* Fondo general pedido */
+    margin: 0;
+    padding: 20px;
+    color: #935931; /* Color de texto pedido */
+}
+
+.container {
+    display: block;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Secciones de formulario y de factura visual */
+.form-section, .invoice-section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(147, 89, 49, 0.15);
+    margin-bottom: 25px;
+    border: 1px solid #ddac85;
+}
+
+h2, h3, h4 {
+    margin-top: 0;
+    color: #935931;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddac85;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #935931;
+    background-color: #f6e6d9;
+}
+
+form input:focus, form select:focus {
+    outline: 2px solid #935931;
+}
+
+.productos-grid {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.productos-grid > div {
+    display: table-cell;
+    width: 50%;
+    padding-right: 10px;
+}
+
+/* Botones con el color solicitado */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ddac85; /* Color de botones pedido */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #935931; /* Se invierte al pasar el mouse */
+}
+
+/* Estructura visual de la factura ("Imagen") */
+.invoice-header {
+    display: table;
+    width: 100%;
+    border-bottom: 2px solid #935931;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.empresa-logo, .empresa-datos {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.empresa-datos {
+    text-align: right;
+}
+
+.empresa-logo img {
+    max-width: 90px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.invoice-cliente {
+    background-color: #f6e6d9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.invoice-cliente p {
+    margin: 5px 0;
+}
+
+/* Tabla interna de la factura */
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.invoice-table th, .invoice-table td {
+    border: 1px solid #ddac85;
+    padding: 12px;
+    text-align: left;
+}
+
+.invoice-table th {
+    background-color: #ddac85;
+    color: white;
+}
+
+.invoice-total {
+    text-align: right;
+    margin-top: 20px;
+    border-top: 2px solid #935931;
+    padding-top: 10px;
+}
+
+.invoice-actions {
+    display: table;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.invoice-actions button {
+    display: inline-block;
+    width: 48%;
+    margin-right: 2%;
+}
+
+/* Estilos de Impresión automáticos */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    body {
+        background: white;
+        padding: 0;
+    }
+    .invoice-section {
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
+        border: none;
+    }
+}

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facturas - Pro-bar</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <title>Generador de Facturas - Pro-bar</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
@@ -12,25 +12,25 @@
         <section class="form-section no-print">
             <h2>Ingresar Datos de la Venta</h2>
             <form id="facturaForm">
-                <label>Nombre del Cliente:</label>
-                <input type="text" id="clienteNombre" required>
+                <label>Nombre Completo del Cliente:</label>
+                <input type="text" id="clienteNombre" placeholder="Ej. Juan Pérez" required>
 
-                <label>Email del Cliente:</label>
-                <input type="email" id="clienteEmail" required>
+                <label>Mail del Cliente:</label>
+                <input type="email" id="clienteEmail" placeholder="ejemplo@mail.com" required>
 
                 <label>Fecha de la Operación:</label>
-                <input type="date" id="fechaOperacion" required>
+                <input type="date" id="fechaOperacion" value="2026-06-13" required>
 
                 <div class="productos-grid">
                     <div>
-                        <label>Cantidad Avena:</label>
+                        <label>Cant. Avena:</label>
                         <input type="number" id="cantAvena" value="0" min="0">
                         <label>Precio Unitario Avena ($):</label>
-                        <input type="number" id="precioAvena" value="1500" min="0">
+                        <input type="number" id="precioAvena" value="1800" min="0">
                     </div>
                     <div>
-                        <label>Cantidad Quinoa Pop:</label>
-                        <input type="number" id="cantQuinoa" value="1800" min="0">
+                        <label>Cant. Quinoa Pop:</label>
+                        <input type="number" id="cantQuinoa" value="0" min="0">
                         <label>Precio Unitario Quinoa ($):</label>
                         <input type="number" id="precioQuinoa" value="1400" min="0">
                     </div>
@@ -49,45 +49,46 @@
         <section class="invoice-section" id="facturaVista">
             <div class="invoice-header">
                 <div class="empresa-logo">
-                    <img src="img/logo.png" alt="Logo" onerror="this.style.display='none';">
+                    <img src="Imagenes/Pro-bar logo.png" alt="Logo" onerror="this.style.display='none';" width="10%">
                     <h3>Pro-bar</h3>
                 </div>
                 <div class="empresa-datos">
-                    <p><strong>Teléfono:</strong> +54 11 2174-7888</p>
+                    <p><strong>Teléfono:</strong>9 11 2174-7888</p>
                     <p><strong>Instagram:</strong> @probar.oficial</p>
-                    <p><strong>Fecha:</strong> <span id="facturaFecha">--/--/----</span></p>
+                    <p><strong>Fecha de Operación:</strong> <span id="facturaFecha">--/--/----</span></p>
                 </div>
             </div>
 
-            <hr>
-
             <div class="invoice-cliente">
                 <h4>Datos del Cliente</h4>
-                <p><strong>Nombre:</strong> <span id="facturaCliente">---------</span></p>
-                <p><strong>Email:</strong> <span id="facturaEmail">---------</span></p>
+                <p><strong>Cliente:</strong> <span id="facturaCliente">---------</span></p>
+                <p><strong>Mail:</strong> <span id="facturaEmail">---------</span></p>
                 <p><strong>Condición de Pago:</strong> <span id="facturaPago">---------</span></p>
             </div>
 
             <table class="invoice-table">
                 <thead>
                     <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
+                        <th>Sabor de Barrita</th>
+                        <th>Cantidad Comprada</th>
                         <th>Precio Unitario</th>
-                        <th>Total</th>
+                        <th>Precio Total por Sabor</th>
                     </tr>
                 </thead>
                 <tbody id="facturaDetalle">
-                    </tbody>
+                    <tr>
+                        <td colspan="4" style="text-align:center;">Completá el formulario y tocá "Generar Factura"</td>
+                    </tr>
+                </tbody>
             </table>
 
             <div class="invoice-total">
-                <h3>Total a Pagar: $<span id="facturaTotal">0.00</span></h3>
+                <h3>Total General: $<span id="facturaTotal">0.00</span></h3>
             </div>
 
             <div class="invoice-actions no-print">
-                <button class="btn-email" onclick="enviarPorMail()">📧 Enviar por Mail</button>
-                <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+                <button class="btn-email" onclick="enviarPorMail()">📧 Mandar por Mail</button>
+                <button class="btn-print" onclick="window.print()">🖨️ Guardar Factura / PDF</button>
             </div>
         </section>
     </div>
