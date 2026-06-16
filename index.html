@@ -25,14 +25,14 @@
                     <div>
                         <label>Cant. Avena:</label>
                         <input type="number" id="cantAvena" value="0" min="0">
-                        <label>Precio Unitario Avena ($):</label>
-                        <input type="number" id="precioAvena" value="1800" min="0">
+                        <label>Precio Unitario Avena y Chocolate:</label>
+                        <input type="number" id="precioAvena" value="2000" min="0">
                     </div>
                     <div>
                         <label>Cant. Quinoa Pop:</label>
                         <input type="number" id="cantQuinoa" value="0" min="0">
-                        <label>Precio Unitario Quinoa ($):</label>
-                        <input type="number" id="precioQuinoa" value="1400" min="0">
+                        <label>Precio Unitario Quinoa Pop y Chocolate:</label>
+                        <input type="number" id="precioQuinoa" value="1600" min="0">
                     </div>
                 </div>
 
@@ -40,6 +40,7 @@
                 <select id="metodoPago">
                     <option value="Contado">Contado</option>
                     <option value="Cuenta Corriente">Cuenta Corriente</option>
+                    <option value="Mercado Pago">Mercado Pago</option>
                 </select>
 
                 <button type="button" onclick="generarFactura()">Generar Factura</button>
@@ -49,11 +50,11 @@
         <section class="invoice-section" id="facturaVista">
             <div class="invoice-header">
                 <div class="empresa-logo">
-                    <img src="Imagenes/Pro-bar logo.png" alt="Logo" onerror="this.style.display='none';" width="10%">
+                    <img src="Imagenes/Pro-bar logo.png" alt="Logo" onerror="this.style.display='none';" width="25%">
                     <h3>Pro-bar</h3>
                 </div>
                 <div class="empresa-datos">
-                    <p><strong>Teléfono:</strong>9 11 2174-7888</p>
+                    <p><strong>Teléfono:</strong> 9 11 2174-7888</p>
                     <p><strong>Instagram:</strong> @probar.oficial</p>
                     <p><strong>Fecha de Operación:</strong> <span id="facturaFecha">--/--/----</span></p>
                 </div>
@@ -82,12 +83,13 @@
                 </tbody>
             </table>
 
-            <div class="invoice-total">
+            <div class="invoice-total" style="text-align: right; margin-top: 20px;">
+                <p>Subtotal: $<span id="facturaSubtotal">0.00</span></p>
+                <p>IVA (21%): $<span id="facturaIVA">0.00</span></p>
                 <h3>Total General: $<span id="facturaTotal">0.00</span></h3>
             </div>
 
             <div class="invoice-actions no-print">
-                <button class="btn-email" onclick="enviarPorMail()">📧 Mandar por Mail</button>
                 <button class="btn-print" onclick="window.print()">🖨️ Guardar Factura / PDF</button>
             </div>
         </section>

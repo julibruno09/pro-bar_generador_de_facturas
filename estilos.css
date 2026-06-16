@@ -132,23 +132,44 @@ button:hover {
     color: white;
 }
 
+.invoice-table th small {
+    display: block;
+    font-weight: normal;
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+/* Sección de Totales (Subtotal, IVA y Total General) */
 .invoice-total {
     text-align: right;
     margin-top: 20px;
     border-top: 2px solid #935931;
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
+.invoice-total p {
+    margin: 4px 0;
+    font-size: 15px;
+    color: #935931;
+}
+
+.invoice-total h3 {
+    margin-top: 10px;
+    font-size: 22px;
+    color: #935931;
+}
+
+/* Contenedor de botones de acción inferiores */
 .invoice-actions {
-    display: table;
-    width: 100%;
-    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: flex-end;
 }
 
 .invoice-actions button {
-    display: inline-block;
-    width: 48%;
-    margin-right: 2%;
+    width: auto;
+    padding: 12px 25px;
 }
 
 /* Estilos de Impresión automáticos */
