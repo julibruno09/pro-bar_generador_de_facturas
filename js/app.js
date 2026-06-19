@@ -76,7 +76,7 @@ function generarFactura() {
     document.getElementById('facturaIVA').innerText = iva.toFixed(2);
     document.getElementById('facturaTotal').innerText = totalGeneral.toFixed(2);
     
-    doc.save("Factura ${nombre} - Pro-bar.pdf");
+    doc.save("Factura {nombre} - Pro-bar.pdf");
 
     alert("¡Factura generada con éxito abajo!");
 }
