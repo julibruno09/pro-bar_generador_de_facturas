@@ -1,5 +1,8 @@
 // Función para procesar los datos del formulario y armar la factura visual
 function generarFactura() {
+    const { jsPDF } = window.jspdf; // Solo si usas la versión moderna por CDN
+    const doc = new jsPDF();
+
     // Captura de datos ingresados
     const nombre = document.getElementById('clienteNombre').value;
     const email = document.getElementById('clienteEmail').value;
@@ -76,7 +79,7 @@ function generarFactura() {
     document.getElementById('facturaIVA').innerText = iva.toFixed(2);
     document.getElementById('facturaTotal').innerText = totalGeneral.toFixed(2);
     
-    doc.save("Factura" + 'clienteNombre' + " - Pro-bar.pdf");
+    doc.save("Factura " + nombre + " - Pro-bar.pdf");
 
     alert("¡Factura generada con éxito abajo!");
 }
